@@ -22,7 +22,7 @@ public class SimpleColorWheelRenderer extends AbsColorWheelRenderer {
 			float p = (float) i / (density - 1); // 0~1
 			float radius = maxRadius * p;
 			float size = colorWheelRenderOption.cSize;
-			int total = calcTotalCount(radius, size);
+			int total = calcTotalCount(i, size);
 
 			for (int j = 0; j < total; j++) {
 				double angle = Math.PI * 2 * j / total + (Math.PI / total) * ((i + 1) % 2);

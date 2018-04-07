@@ -8,6 +8,7 @@
 
     <dimen name="padding_side">20dp</dimen>
     <dimen name="padding_top_bottom">15dp</dimen>
+    <dimen name="emotion_text_size">20dp</dimen>
 
     <dimen name="default_slider_height">36dp</dimen>
     <dimen name="default_slider_margin">24dp</dimen>

@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/emotion_text"
+            android:id="@+id/emotion_text_section"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/padding_top_bottom">
@@ -24,8 +24,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textSize="20dp"
-                android:hint="Emotion" />
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/emotion_text_size"
+                android:text="Emotion" />
 
         </RelativeLayout>
 
@@ -45,7 +47,7 @@
                 app:density="12"
                 app:lightnessSlider="false"
                 app:lightnessSliderView="@+id/v_lightness_slider"
-                app:wheelType="CIRCLE" />
+                app:wheelType="FLOWER" />
 
             <!--<com.dunbar.daniel.latenz.colorpicker.slider.LightnessSlider
             android:id="@+id/v_lightness_slider"
@@ -60,7 +62,7 @@
             android:padding="@dimen/padding_top_bottom">
 
             <TextView
-                android:id="@+id/emotion_definition"
+                android:id="@+id/emotion_definition_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Definition"/>

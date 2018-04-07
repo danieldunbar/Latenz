@@ -27,7 +27,7 @@ public class FlowerColorWheelRenderer extends AbsColorWheelRenderer {
 			float jitter = (i - density / 2f) / density; // -0.5 ~ 0.5
 			float radius = maxRadius * p;
 			float size = Math.max(1.5f + strokeWidth, cSize + (i == 0 ? 0 : cSize * sizeJitter * jitter));
-			int total = Math.min(calcTotalCount(radius, size), density * 2);
+			int total = Math.min(calcTotalCount(i, size), density * 2);
 
 			for (int j = 0; j < total; j++) {
 				double angle = Math.PI * 2 * j / total + (Math.PI / total) * ((i + 1) % 2);
