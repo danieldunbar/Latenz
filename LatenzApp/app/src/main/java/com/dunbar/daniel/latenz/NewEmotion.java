@@ -1,13 +1,37 @@
 package com.dunbar.daniel.latenz;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDialogFragment;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.dunbar.daniel.latenz.colorpicker.ColorPickerView;
+import com.dunbar.daniel.latenz.colorpicker.OnColorChangedListener;
+import com.dunbar.daniel.latenz.colorpicker.OnColorSelectedListener;
+import com.dunbar.daniel.latenz.colorpicker.builder.ColorPickerClickListener;
+import com.dunbar.daniel.latenz.colorpicker.builder.ColorPickerDialogBuilder;
+import com.dunbar.daniel.latenz.colorpicker.builder.ColorPickerFragment;
 
 public class NewEmotion extends AppCompatActivity {
 
@@ -18,6 +42,23 @@ public class NewEmotion extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("New Emotion");
         setSupportActionBar(toolbar);
+
+        ColorPickerView colorPickerView = (ColorPickerView) findViewById(R.id.color_picker_view);
+        colorPickerView.addOnColorChangedListener(new OnColorChangedListener() {
+            @Override public void onColorChanged(int selectedColor) {
+                // Handle on color change
+                Log.d("ColorPicker", "onColorChanged: 0x" + Integer.toHexString(selectedColor));
+            }
+        });
+        colorPickerView.addOnColorSelectedListener(new OnColorSelectedListener() {
+            @Override
+            public void onColorSelected(int selectedColor) {
+                Toast.makeText(
+                        NewEmotion.this,
+                        "selectedColor: " + Integer.toHexString(selectedColor).toUpperCase(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
