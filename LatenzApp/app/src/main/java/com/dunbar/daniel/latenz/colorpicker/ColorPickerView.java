@@ -82,6 +82,8 @@ public class ColorPickerView extends View {
 
 	private int alphaSliderViewId, lightnessSliderViewId;
 
+	private boolean showAlphaSlider, showLightnessSlider;
+
 	public ColorPickerView(Context context) {
 		super(context);
 		initWith(context, null);
@@ -114,6 +116,9 @@ public class ColorPickerView extends View {
 		WHEEL_TYPE wheelType = WHEEL_TYPE.indexOf(typedArray.getInt(R.styleable.ColorPickerPreference_wheelType, 0));
 		ColorWheelRenderer renderer = ColorWheelRendererBuilder.getRenderer(wheelType);
 
+		showAlphaSlider = typedArray.getBoolean(R.styleable.ColorPickerPreference_alphaSlider, false);
+		showLightnessSlider = typedArray.getBoolean(R.styleable.ColorPickerPreference_lightnessSlider, false);
+
 		alphaSliderViewId = typedArray.getResourceId(R.styleable.ColorPickerPreference_alphaSliderView, 0);
 		lightnessSliderViewId = typedArray.getResourceId(R.styleable.ColorPickerPreference_lightnessSliderView, 0);
 
@@ -135,9 +140,9 @@ public class ColorPickerView extends View {
 	protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
 		super.onLayout(changed, left, top, right, bottom);
 
-		if (alphaSliderViewId != 0)
+		if (showAlphaSlider)
 			setAlphaSlider((AlphaSlider) getRootView().findViewById(alphaSliderViewId));
-		if (lightnessSliderViewId != 0)
+		if (showLightnessSlider)
 			setLightnessSlider((LightnessSlider) getRootView().findViewById(lightnessSliderViewId));
 
 		updateColorWheel();

@@ -14,9 +14,9 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.dunbar.daniel.latenz.R;
 import com.dunbar.daniel.latenz.colorpicker.builder.ColorPickerClickListener;
 import com.dunbar.daniel.latenz.colorpicker.builder.ColorPickerDialogBuilder;
+import com.dunbar.daniel.latenz.R;
 
 
 public class ColorPickerPreference extends Preference {

@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-
 import com.dunbar.daniel.latenz.colorpicker.ColorPickerView;
 import com.dunbar.daniel.latenz.colorpicker.OnColorChangedListener;
 import com.dunbar.daniel.latenz.colorpicker.OnColorSelectedListener;
@@ -23,17 +22,6 @@ import com.dunbar.daniel.latenz.colorpicker.slider.AlphaSlider;
 import com.dunbar.daniel.latenz.colorpicker.slider.LightnessSlider;
 import com.dunbar.daniel.latenz.R;
 
-/***
-import com.flask.colorpicker.ColorPickerView;
-import com.flask.colorpicker.OnColorChangedListener;
-import com.flask.colorpicker.OnColorSelectedListener;
-import com.flask.colorpicker.R;
-
-import com.flask.colorpicker.Utils;
-import com.flask.colorpicker.renderer.ColorWheelRenderer;
-import com.flask.colorpicker.slider.AlphaSlider;
-import com.flask.colorpicker.slider.LightnessSlider;
- ***/
 
 public class ColorPickerDialogBuilder {
 	private AlertDialog.Builder builder;
